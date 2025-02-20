@@ -14,9 +14,9 @@ import torch.distributed as dist
 def parse_args_and_config():
     parser = argparse.ArgumentParser(description=globals()['__doc__'])
 
-    parser.add_argument('-c', '--config', type=str, default='/home/BBDM-main/configs/Template-LBBDM-f4.yaml', help='Path to the config file')
+    parser.add_argument('-c', '--config', type=str, default='configs/Template-LEDS2M-f4.yaml', help='Path to the config file')
     parser.add_argument('-s', '--seed', type=int, default=1234, help='Random seed')
-    parser.add_argument('-r', '--result_path', type=str, default='resultsA2B2', help="The directory to save results")
+    parser.add_argument('-r', '--result_path', type=str, default='results', help="The directory to save results")
 
     parser.add_argument('-t', '--train', action='store_true', default=False, help='train the model')
     parser.add_argument('--sample_to_eval', action='store_true', default=True, help='sample for evaluation')
@@ -26,7 +26,7 @@ def parse_args_and_config():
     parser.add_argument('--gpu_ids', type=str, default='4', help='gpu ids, 0,1,2,3 cpu=-1')
     parser.add_argument('--port', type=str, default='12355', help='DDP master port')
 
-    parser.add_argument('--resume_model', type=str, default="/home/BBDM-main/resultsA2B/SAMPLE/LBBDM-f4/checkpoint/latest_model_996.pth", help='model checkpoint')
+    parser.add_argument('--resume_model', type=str, default="results/SAMPLE/LEDS2M-f4/checkpoint/latest_model_996.pth", help='model checkpoint')
     parser.add_argument('--resume_optim', type=str, default=None, help='optimizer checkpoint')
 
 
